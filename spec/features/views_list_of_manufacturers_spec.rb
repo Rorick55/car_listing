@@ -13,8 +13,8 @@ feature 'views a list of manufacturers', %Q{
 
   scenario 'salesperson views a list of manufacturers' do
     manufacturer1 = FactoryGirl.create(:manufacturer)
-    manufacturers = FactoryGirl.create(:manufacturer, 3)
-    cars = FactoryGirl.create(:car, manufacturer: manufacturer1, 3)
+    manufacturers = FactoryGirl.create_list(:manufacturer, 3)
+    cars = FactoryGirl.create_list(:car, 3, manufacturer: manufacturer1)
 
     visit manufacturers_path
 

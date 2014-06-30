@@ -17,7 +17,7 @@ feature 'adds a new car', %Q{
   scenario 'salesperson inputs valid information' do
     visit new_car_path
 
-    fill_in 'Manufacturer', with 'Toyota'
+    fill_in 'Manufacturer', with: 'Toyota'
     fill_in 'Color', with: 'Pink'
     fill_in 'Year', with: '1992'
     fill_in 'Mileage', with: '20000'

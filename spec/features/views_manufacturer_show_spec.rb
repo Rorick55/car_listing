@@ -9,7 +9,7 @@ feature 'viewes manufacturer show page', %Q{
 
   scenario 'salesperson views a manufacturer show page' do
     manufacturer = FactoryGirl.create(:manufacturer)
-    cars = FactoryGirl.create(:car, manufacturer: manufacturer, 3)
+    cars = FactoryGirl.create_list(:car, 3, manufacturer: manufacturer)
 
     visit manufacturer_path(manufacturer)
 

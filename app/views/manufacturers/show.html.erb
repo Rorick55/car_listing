@@ -1,1 +1,10 @@
+<h2><%= @manufacturer.name %></h2>
 
+<p>country: <%= @manufacturer.country %></p>
+
+<p>Cars Available:</p>
+<ul>
+  <% @manufacturer.cars.each do |car| %>
+    <li><%= car.year %> - <%= car.color %></li>
+  <% end %>
+</ul>

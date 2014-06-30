@@ -10,7 +10,7 @@ feature 'views a list of cars', %Q{
   # It should have the cars manufacurer, year, and mileage
 
   scenario 'salesperson views a list of cars' do
-    cars = FactoryGirl.create(:car, 3)
+    cars = FactoryGirl.create_list(:car, 3)
 
     visit cars_path
 
