@@ -5,6 +5,11 @@
 <p>Cars Available:</p>
 <ul>
   <% @manufacturer.cars.each do |car| %>
-    <li><%= car.year %> - <%= car.color %></li>
+    <li>
+      <%= car.year %> -
+      <%= car.color %> -
+      <%= car.mileage %> Miles,
+      <%= link_to 'view details', car_path(car) %>
+    </li>
   <% end %>
 </ul>

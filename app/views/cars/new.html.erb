@@ -11,24 +11,23 @@
   <% end %>
 
   <div>
-    <%= f.label :color %>
+    <%= f.label :color %><br/>
     <%= f.text_field :color %>
   </div>
   <div>
-    <%= f.label :year %>
+    <%= f.label :year %><br/>
     <%= f.text_field :year %>
   </div>
   <div>
-    <%= f.label :mileage %>
+    <%= f.label :mileage %><br/>
     <%= f.text_field :mileage %>
   </div>
   <div>
-    <%= f.label :manufacturer_id %>
+    <%= f.label :manufacturer_id %><br/>
     <%= f.collection_select(:manufacturer_id, @manufacturers, :id, :name) %>
-    <%= link_to 'Add manufacturer', new_manufacturer_path %>
   </div>
   <div>
-    <%= f.label :description %>
+    <%= f.label :description %><br/>
     <%= f.text_area :description %>
   </div>
   <div>
