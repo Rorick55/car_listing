@@ -17,7 +17,6 @@ feature 'adds a manufacturer', %Q{
     fill_in 'Country', with: 'Japan'
     click_on 'Submit'
 
-    expect(page).to have_content 'Japan'
     expect(page).to have_content 'Toyota'
     expect(page).to have_content 'Successfully added Toyota'
   end
