@@ -18,7 +18,9 @@ class CarsController < ApplicationController
       flash[:notice] = 'Successfully added this car'
       redirect_to cars_path
     else
-      render :new
+      flash[:notice] = 'There was a problem saving your submission'
+      #render :new
+      redirect_to cars_path
     end
   end
 

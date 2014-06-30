@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-root to: 'manufacturer#index'
+root to: 'manufacturers#index'
 
 resources :manufacturers
 
