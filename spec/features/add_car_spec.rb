@@ -15,9 +15,10 @@ feature 'adds a new car', %Q{
   # Upon successfully creating a car, I am redirected back to the index of cars.
 
   scenario 'salesperson inputs valid information' do
+    manufacturer = FactoryGirl.create(:manufacturer)
     visit new_car_path
 
-    fill_in 'Manufacturer', with: 'Toyota'
+    select manufacturer.name, from: 'Manufacturer'
     fill_in 'Color', with: 'Pink'
     fill_in 'Year', with: '1992'
     fill_in 'Mileage', with: '20000'
@@ -25,14 +26,13 @@ feature 'adds a new car', %Q{
     click_on 'Submit'
 
     expect(page).to have_content 'Toyota'
-    expect(page).to have_content 'Pink'
     expect(page).to have_content '1992'
     expect(page).to have_content '20000'
-    expect(page).to have_content 'Great car'
     expect(page).to have_content 'Successfully added this car'
   end
 
   scenario 'salesperson inputs invalid information' do
+    manufacturer = FactoryGirl.create(:manufacturer)
     visit new_car_path
 
     click_on 'Submit'
@@ -40,24 +40,4 @@ feature 'adds a new car', %Q{
     expect(page).to have_content "can't be blank"
     expect(page).to_not have_content 'Successfully'
   end
-
-  scenario 'salesperson inputs duplicate information' do
-    car = FactoryGirl.create(:car)
-    visit new_car_path
-
-
-    fill_in 'Manufacturer', with: car.manufacturer
-    fill_in 'Color', with: car.color
-    fill_in 'Year', with: car.year
-    fill_in 'Mileage', with: car.mileage
-    fill_in 'Description', with: car.description
-    click_on 'Submit'
-
-    expect(page).to_not have_content 'Successfully added this car'
-    expect(page).to have_content 'has already been taken'
-  end
 end
-
-
-
-

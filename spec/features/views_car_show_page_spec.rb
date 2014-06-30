@@ -15,7 +15,7 @@ feature 'views a car detail page', %Q{
     visit car_path(car)
 
     expect(page).to have_content car.color
-    expect(page).to have_content car.manufacturer
+    expect(page).to have_content car.manufacturer.name
     expect(page).to have_content car.year
     expect(page).to have_content car.mileage
     expect(page).to have_content car.description
