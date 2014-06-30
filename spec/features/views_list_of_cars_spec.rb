@@ -10,12 +10,13 @@ feature 'views a list of cars', %Q{
   # It should have the cars manufacurer, year, and mileage
 
   scenario 'salesperson views a list of cars' do
-    cars = FactoryGirl.create_list(:car, 3)
+    manufacturer = FactoryGirl.create(:manufacturer)
+    cars = FactoryGirl.create_list(:car, 3, manufacturer: manufacturer)
 
     visit cars_path
 
     cars.each do |car|
-      expect(page).to have_content car.manufacurer
+      expect(page).to have_content car.manufacturer.name
       expect(page).to have_content car.year
       expect(page).to have_content car.mileage
     end
