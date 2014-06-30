@@ -37,7 +37,7 @@ feature 'adds a new car', %Q{
 
     click_on 'Submit'
 
-    expect(page).to have_content "There was a problem saving your submission"
+    expect(page).to have_content "can't be blank"
     expect(page).to_not have_content 'Successfully'
   end
 end
