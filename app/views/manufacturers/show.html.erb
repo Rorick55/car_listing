@@ -1,0 +1,15 @@
+<h2><%= @manufacturer.name %></h2>
+
+<p>country: <%= @manufacturer.country %></p>
+
+<p>Cars Available:</p>
+<ul>
+  <% @manufacturer.cars.each do |car| %>
+    <li>
+      <%= car.year %> -
+      <%= car.color %> -
+      <%= car.mileage %> Miles,
+      <%= link_to 'view details', car_path(car) %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,10 @@
+<h3>
+  <%= @car.year %>,
+  <%= link_to @car.manufacturer.name, manufacturer_path(@car.manufacturer) %>
+</h3>
+
+<p>Color: <%= @car.color %></p>
+
+<p>Mileage: <%= @car.mileage %></p>
+
+<p>Description: <%= @car.description %></p>
